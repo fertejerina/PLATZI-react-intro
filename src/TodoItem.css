@@ -1,0 +1,30 @@
+.TodoItem{
+    display: inline;
+    width: 50%;
+    list-style: none;
+}
+
+.TodoItem-text{
+    display: inline-block;
+    background-color: #26798E;
+    padding: 10px;
+    width: 80%;
+    border-radius: 10px;
+}
+
+.TodoItem-hecho {
+    background-color: #268e55;
+    border-radius: 18px;
+    padding: 5px;
+    margin-right: 15px;
+    margin-left: 12px;
+}
+
+.TodoItem-x{
+    display: inline-block;
+    font-size: 24px;
+    ;
+    color: rgb(100, 0, 0);
+    margin-left: 5px;
+
+}
