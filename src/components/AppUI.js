@@ -5,6 +5,7 @@ import { TodoList } from "./TodoList";
 import { TodoItem } from "./TodoItem";
 import { CreateTodoButton } from "./CreateTodoButton";
 import { ToDoContext } from './TodoContext'
+import { Modal } from './Modal'
 
 
 function AppUI() {
@@ -20,13 +21,10 @@ function AppUI() {
     <React.Fragment>
     <TodoCounter />
     <TodoSearch />
-
-
-          <TodoList >
+    <TodoList >
       {error && <p>Hubo en error.</p>}
       {loading && <p>Cargando...</p>}
       {(!loading && !searchedToDos.length) && <p>Crea tu primer ToDo!</p>}
-
       {searchedToDos.map(todo => (
         <TodoItem
         key={todo.text} 
@@ -39,6 +37,11 @@ function AppUI() {
         ))}
     </TodoList>
 
+    <Modal>
+        <h2>Introduce aqui tu 'ToDo'</h2>
+        <input placeholder='Ej: "Pasear al perro"'></input>
+
+    </Modal>
 
     <CreateTodoButton />
     </React.Fragment>

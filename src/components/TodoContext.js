@@ -3,6 +3,8 @@ import { useLocalStorage } from "./useLocalStorage";
 
 const ToDoContext = React.createContext()
 
+//LOGICA
+
 function ToDoProvider(props){
     const {item: toDos, saveItem: saveToDos, loading, error} = useLocalStorage('TODOS_V1', [])
     const [searchValue, setSearchValue] = React.useState('');
@@ -47,7 +49,6 @@ function ToDoProvider(props){
         searchedToDos,
         completeToDo,
         deleteToDo,
-
         }}>
             {props.children}
         </ToDoContext.Provider>

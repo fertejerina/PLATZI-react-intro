@@ -26,8 +26,6 @@ function useLocalStorage (itemName, initialValue) {
     }, 2000)
   })
   
-  
-  
     const saveItem = (newItem) => {
       try {
         const stringifiedItem = JSON.stringify(newItem);
@@ -36,7 +34,6 @@ function useLocalStorage (itemName, initialValue) {
       } catch (error){
         setError(error)
       }
-  
     };
   
     return {
