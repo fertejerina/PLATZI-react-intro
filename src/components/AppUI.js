@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { TodoCounter } from "./TodoCounter";
 import { TodoSearch } from "./TodoSearch";
 import { TodoList } from "./TodoList";
@@ -14,11 +14,13 @@ function AppUI() {
       loading,
       searchedToDos,
       completeToDo,
-      deleteToDo
-    } = React.useContext(ToDoContext)
+      deleteToDo,
+      openModal,
+      setOpenModal,
+    } = useContext(ToDoContext)
 
     return (
-    <React.Fragment>
+    <>
     <TodoCounter />
     <TodoSearch />
     <TodoList >
@@ -37,14 +39,16 @@ function AppUI() {
         ))}
     </TodoList>
 
-    <Modal>
-        <h2>Introduce aqui tu 'ToDo'</h2>
-        <input placeholder='Ej: "Pasear al perro"'></input>
+        {!!openModal && (
+          <Modal/>
+        )}
+        
 
-    </Modal>
-
-    <CreateTodoButton />
-    </React.Fragment>
+    <CreateTodoButton
+      openModal={openModal}
+      setOpenModal={setOpenModal}
+    />
+    </>
     );
 }
 

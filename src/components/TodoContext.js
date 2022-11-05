@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { useLocalStorage } from "./useLocalStorage";
 
 const ToDoContext = React.createContext()
@@ -7,7 +7,8 @@ const ToDoContext = React.createContext()
 
 function ToDoProvider(props){
     const {item: toDos, saveItem: saveToDos, loading, error} = useLocalStorage('TODOS_V1', [])
-    const [searchValue, setSearchValue] = React.useState('');
+    const [searchValue, setSearchValue] = useState('');
+    const [openModal, setOpenModal] = useState(false)
     const completedToDos = toDos.filter(todo => !!todo.completed).length;
     const totalToDos = toDos.length;
     let searchedToDos = [];
@@ -49,6 +50,8 @@ function ToDoProvider(props){
         searchedToDos,
         completeToDo,
         deleteToDo,
+        openModal,
+        setOpenModal,
         }}>
             {props.children}
         </ToDoContext.Provider>
