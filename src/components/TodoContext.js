@@ -1,7 +1,7 @@
-import React, {useState} from "react";
+import React, {useState, createContext} from "react";
 import { useLocalStorage } from "./useLocalStorage";
 
-const ToDoContext = React.createContext()
+const ToDoContext = createContext()
 
 //LOGICA
 
@@ -13,7 +13,7 @@ function ToDoProvider(props){
     const totalToDos = toDos.length;
     let searchedToDos = [];
 
-    if(searchValue.lenght === 0){
+    if(searchValue.length === 0){
       searchedToDos=toDos
     } else {
       searchedToDos = toDos.filter(todo=>{
@@ -23,6 +23,15 @@ function ToDoProvider(props){
       })
     }
   
+    const addToDo = (text) => {
+      const newToDos = [...toDos];
+      newToDos.push({
+        completed: false,
+        text: text,
+      });
+      saveToDos(newToDos); // recargamos el estado
+    }
+
     const completeToDo = (text) => {
       const toDoIndex = toDos.findIndex(todo => todo.text === text);
       const newToDos = [...toDos];
@@ -49,6 +58,7 @@ function ToDoProvider(props){
         setSearchValue,
         searchedToDos,
         completeToDo,
+        addToDo,
         deleteToDo,
         openModal,
         setOpenModal,
