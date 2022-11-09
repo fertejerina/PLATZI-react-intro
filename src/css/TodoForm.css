@@ -1,7 +1,50 @@
-.title-modal{
-    color: black;
+form{
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    max-width: 400px;
+
 }
 
-.write-area{
+label{
+    color: black;
+    text-align: center;
+    margin-top: 20px;
+
+}
+
+textarea{
     margin: 20px;
+    height: 96px;
+    width: calc(100%-25px);
+}
+
+textarea:focus {
+    outline-color: #61DAFA;
+  }
+
+.buttons-area{
+    padding-top: 14px;
+}
+
+.button-cancel{
+    background-color: transparent;
+    border-width: 1px;
+    border-color: rgb(155, 155, 155);
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.button-submit{
+    background-color: #6D7993;  
+    height: 40px;
+    box-shadow: ;
+    border-width: 1px;
+    border-color: rgb(155, 155, 155);
+    padding: 5px;
+    padding-left: 23px;
+    padding-right: 23px;
+    margin-left: 20px;
+    box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.5);
 }
