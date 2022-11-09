@@ -35,7 +35,11 @@ function ToDoProvider(props){
     const completeToDo = (text) => {
       const toDoIndex = toDos.findIndex(todo => todo.text === text);
       const newToDos = [...toDos];
-      newToDos[toDoIndex].completed = true;
+      if((newToDos[toDoIndex].completed)===false){
+        newToDos[toDoIndex].completed = true
+      } else {
+        newToDos[toDoIndex].completed = false
+      }
       saveToDos(newToDos); // recargamos el estado
       alert(`Ya completaste el todo "${text}"`)
     }
