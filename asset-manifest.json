@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/PLATZI-react-intro/static/css/main.d6dc1436.css",
+    "main.css": "/PLATZI-react-intro/static/css/main.104293c4.css",
     "main.js": "/PLATZI-react-intro/static/js/main.b05dad90.js",
     "index.html": "/PLATZI-react-intro/index.html",
-    "main.d6dc1436.css.map": "/PLATZI-react-intro/static/css/main.d6dc1436.css.map",
+    "main.104293c4.css.map": "/PLATZI-react-intro/static/css/main.104293c4.css.map",
     "main.b05dad90.js.map": "/PLATZI-react-intro/static/js/main.b05dad90.js.map"
   },
   "entrypoints": [
-    "static/css/main.d6dc1436.css",
+    "static/css/main.104293c4.css",
     "static/js/main.b05dad90.js"
   ]
 }
