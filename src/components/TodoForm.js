@@ -8,10 +8,6 @@ function TodoForm() {
         addToDo, setOpenModal
     } = useContext(ToDoContext);
 
-    const onChange = (event) => {
-    setNewToDoValue(event.target.value);
-    }
-
     const onCancel = () => {
         setOpenModal(false)
     }
@@ -22,13 +18,12 @@ function TodoForm() {
         setOpenModal(false)
     }
 
-
     return(
         <form onSubmit={onSubmit}>
             <label>Introduce aqui tu 'ToDo'</label>
             <textarea
             value={newToDoValue}
-            onChange={onChange}
+            onChange={onChange = (e) => setNewToDoValue(e.target.value)}
             placeholder="Escribe aqui."/>
             <div className="buttons-area">
                 <button onClick={onCancel} type="button" className="button-cancel">Cancelar</button>
